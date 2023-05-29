@@ -1,11 +1,15 @@
 #Greenfoot project file
 class.Chicken.image=pelican.png
+class.MyWorld.image=road.png
+dependency1.from=MyWorld
+dependency1.to=Chicken
+dependency1.type=UsesDependency
 editor.fx.0.height=760
 editor.fx.0.width=816
 editor.fx.0.x=943
 editor.fx.0.y=97
 height=585
-package.numDependencies=0
+package.numDependencies=1
 package.numTargets=2
 project.charset=windows-1252
 publish.hasSource=false
@@ -38,5 +42,5 @@ target2.y=0
 version=3.0.0
 width=825
 world.lastInstantiated=MyWorld
-xPosition=185
-yPosition=105
+xPosition=715
+yPosition=75
