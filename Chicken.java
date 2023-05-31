@@ -25,7 +25,7 @@ public class Chicken extends Actor
         for(int i = 0; i < idleLeft.length; i++)
         {
             idleLeft[i] = new GreenfootImage("images/chicken_idle/idle" + i + ".png");
-            idleLeft[i].scale(50, 90);
+            idleLeft[i].scale(50, 95);
             idleLeft[i].mirrorHorizontally();
         }
         
