@@ -55,6 +55,17 @@ public class Chicken extends Actor
         }
     }
     
+    public void collectEgg()
+    {
+        if(isTouching(Egg.class))
+        {
+            removeTouching(Egg.class);
+            MyWorld world = (MyWorld) getWorld();
+            world.createEgg();
+            world.increaseScore();
+        }
+    }
+    
     public void act()
     {    
         int x = getX();
@@ -78,5 +89,7 @@ public class Chicken extends Actor
             setLocation(x, y + 3);
         }
         animateChicken();
+        collectEgg();
     }
+    
 }
