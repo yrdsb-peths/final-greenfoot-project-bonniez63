@@ -10,8 +10,8 @@ public class MyWorld extends World
 {
     public MyWorld()
     {    
-        super(600, 400, 1, false);
+        super(900, 600, 1, false);
         Chicken chicken = new Chicken();
-        addObject(chicken, 300, 315);
+        addObject(chicken, 450, 475);
     }
 }

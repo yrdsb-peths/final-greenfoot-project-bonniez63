@@ -19,13 +19,13 @@ public class Chicken extends Actor
         for(int i = 0; i < idleRight.length; i++)
         {
             idleRight[i] = new GreenfootImage("images/chicken_idle/idle" + i + ".png");
-            idleRight[i].scale(35, 65);
+            idleRight[i].scale(50, 95);
         }
             
         for(int i = 0; i < idleLeft.length; i++)
         {
             idleLeft[i] = new GreenfootImage("images/chicken_idle/idle" + i + ".png");
-            idleLeft[i].scale(35, 65);
+            idleLeft[i].scale(50, 90);
             idleLeft[i].mirrorHorizontally();
         }
         
