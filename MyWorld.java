@@ -20,10 +20,18 @@ public class MyWorld extends World
         addObject(chicken, 450, spawnLocationY[Greenfoot.getRandomNumber(4)]);
         
         scoreLabel = new Label(0, 125);
-        addObject(scoreLabel, 850, 55);
+        addObject(scoreLabel, 825, 55);
         
         createEgg();
+        //createCar();
     }
+    
+      public void createCar()
+      {
+        Car car = new Car();
+        int y = spawnLocationY[Greenfoot.getRandomNumber(4)];
+        addObject(car, 0, y);
+      }
     
     public void createEgg()
     {
