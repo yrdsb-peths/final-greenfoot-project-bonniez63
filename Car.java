@@ -10,7 +10,6 @@ public class Car extends Actor
 {
     GreenfootImage[] carsRight = new GreenfootImage[5];
     GreenfootImage[] carsLeft = new GreenfootImage[5];
-    String direction = "right";
     
     public Car()
     {
@@ -28,16 +27,13 @@ public class Car extends Actor
     public void createCar()
     {
         int y = getY();
+        int carIndex = Greenfoot.getRandomNumber(5);
         if(y == 375 || y == 475)
         {
-            direction = "right";
-            int carIndex = Greenfoot.getRandomNumber(5);
             setImage(carsRight[carIndex]);
         }
         else
         {
-            direction = "left";
-            int carIndex = Greenfoot.getRandomNumber(5);
             setImage(carsLeft[carIndex]);
         }
     }
