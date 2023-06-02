@@ -10,30 +10,54 @@ public class Car extends Actor
 {
     GreenfootImage[] carsRight = new GreenfootImage[5];
     GreenfootImage[] carsLeft = new GreenfootImage[5];
+    String direction = "right";
     
     public Car()
     {
+        for(int i = 0; i < carsLeft.length; i++)
+        {
+            carsLeft[i] = new GreenfootImage("images/cars/car" + i + ".png");
+            carsLeft[i].mirrorHorizontally();
+        }
         for(int i = 0; i < carsRight.length; i++)
         {
             carsRight[i] = new GreenfootImage("images/cars/car" + i + ".png");
         }
-        for(int i = 0; i < carsLeft.length; i++)
-        {
-            carsLeft[i] = new GreenfootImage("images/cars/car" + i + ".png");
-        }
-        
-        setImage(carsRight[0]);
     }
     
     public void createCar()
     {
-        int rightSpawnLocationY[] = {375, 475};
-        int leftSpawnLocationY[] = {125, 225};
-        
+        int y = getY();
+        if(y == 375 || y == 475)
+        {
+            direction = "right";
+            int carIndex = Greenfoot.getRandomNumber(5);
+            setImage(carsRight[carIndex]);
+        }
+        else
+        {
+            direction = "left";
+            int carIndex = Greenfoot.getRandomNumber(5);
+            setImage(carsLeft[carIndex]);
+        }
     }
     
+    public void move()
+    {
+        int y = getY();
+        if(y == 125 || y == 225)
+        {
+            move(-3);
+        }
+        else
+        {
+            move(3);
+        }
+    }
+
     public void act()
     {
-        move(3);
+        createCar();
+        move();
     }
 }

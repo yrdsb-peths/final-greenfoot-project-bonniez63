@@ -23,15 +23,20 @@ public class MyWorld extends World
         addObject(scoreLabel, 825, 55);
         
         createEgg();
-        //createCar();
+        createCar();
     }
     
-      public void createCar()
-      {
+    public void createCar()
+    {
         Car car = new Car();
         int y = spawnLocationY[Greenfoot.getRandomNumber(4)];
-        addObject(car, 0, y);
-      }
+        int x = 0;
+        if(y == 125 || y == 225)
+        {
+            x = getWidth();
+        }
+        addObject(car, x, y);
+    }
     
     public void createEgg()
     {
