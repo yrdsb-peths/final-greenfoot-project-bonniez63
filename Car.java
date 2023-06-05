@@ -10,6 +10,7 @@ public class Car extends Actor
 {
     GreenfootImage[] carsRight = new GreenfootImage[5];
     GreenfootImage[] carsLeft = new GreenfootImage[5];
+    //SimpleTimer carTimer = new SimpleTimer();
     
     public Car()
     {
@@ -40,14 +41,25 @@ public class Car extends Actor
     
     public void move()
     {
+        int speed = 3;
         int y = getY();
         if(y == 125 || y == 225)
         {
-            move(-3);
+            move(-1 * speed);
         }
         else
         {
-            move(3);
+            move(speed);
+        }
+    }
+    
+    public void crash()
+    {
+        //The game ends when the car crashes into the chicken.
+        if(isTouching(Chicken.class))
+        {
+            MyWorld world = (MyWorld) getWorld();
+            world.gameOver();
         }
     }
 
@@ -55,5 +67,6 @@ public class Car extends Actor
     {
         createCar();
         move();
+        crash();
     }
 }

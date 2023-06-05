@@ -9,8 +9,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
     public int score = 0;
+    public int level = 0;
     Label scoreLabel;
+    Label gameOverLabel;
     int[] spawnLocationY = {125, 225, 375, 475};
+    public boolean gameRunning = true;
     
     public MyWorld()
     {    
@@ -50,5 +53,13 @@ public class MyWorld extends World
     {
         score++;
         scoreLabel.setValue(score);
+        level = score/5;
+    }
+    
+    public void gameOver()
+    {
+        gameOverLabel = new Label("Game Over", 150);
+        addObject(gameOverLabel, 450, 300);
+        gameRunning = false;
     }
 }

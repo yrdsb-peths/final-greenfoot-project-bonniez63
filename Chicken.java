@@ -42,7 +42,7 @@ public class Chicken extends Actor
             return;
         }
         animationTimer.mark();
-        
+            
         if(facing.equals("right"))
         {
             setImage(idleRight[imageIndex]);
@@ -57,6 +57,7 @@ public class Chicken extends Actor
     
     public void collectEgg()
     {
+        //Our Chicken gains points by collecting eggs.
         if(isTouching(Egg.class))
         {
             removeTouching(Egg.class);
