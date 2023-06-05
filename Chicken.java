@@ -19,13 +19,13 @@ public class Chicken extends Actor
         for(int i = 0; i < idleRight.length; i++)
         {
             idleRight[i] = new GreenfootImage("images/chicken_idle/idle" + i + ".png");
-            idleRight[i].scale(50, 95);
+            idleRight[i].scale(30, 55);
         }
             
         for(int i = 0; i < idleLeft.length; i++)
         {
             idleLeft[i] = new GreenfootImage("images/chicken_idle/idle" + i + ".png");
-            idleLeft[i].scale(50, 95);
+            idleLeft[i].scale(30, 55);
             idleLeft[i].mirrorHorizontally();
         }
         
@@ -69,6 +69,11 @@ public class Chicken extends Actor
     
     public void act()
     {    
+        if(!getWorldOfType(MyWorld.class).gameRunning) 
+        {
+            return;
+        }
+        
         int x = getX();
         int y = getY();
         if(Greenfoot.isKeyDown("left"))

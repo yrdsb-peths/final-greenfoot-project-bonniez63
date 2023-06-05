@@ -14,6 +14,7 @@ public class MyWorld extends World
     Label gameOverLabel;
     int[] spawnLocationY = {125, 225, 375, 475};
     public boolean gameRunning = true;
+    SimpleTimer carTimer = new SimpleTimer();
     
     public MyWorld()
     {    
@@ -26,19 +27,32 @@ public class MyWorld extends World
         addObject(scoreLabel, 825, 55);
         
         createEgg();
+    }
+    
+    public void act() 
+    {
         createCar();
     }
     
     public void createCar()
     {
-        Car car = new Car();
-        int y = spawnLocationY[Greenfoot.getRandomNumber(4)];
-        int x = 0;
-        if(y == 125 || y == 225)
+        if(!gameRunning) 
         {
-            x = getWidth();
+            return;
         }
-        addObject(car, x, y);
+        if(carTimer.millisElapsed() > 2000 - level * 50)
+        {
+            Car car = new Car();
+            int y = spawnLocationY[Greenfoot.getRandomNumber(4)];
+            int x = 0;
+            if(y == 125 || y == 375)
+            {
+                x = getWidth();
+            }
+            addObject(car, x, y);
+            
+            carTimer.mark();
+        }
     }
     
     public void createEgg()
