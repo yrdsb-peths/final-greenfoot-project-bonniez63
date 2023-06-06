@@ -10,6 +10,7 @@ public class Chicken extends Actor
 {
     GreenfootImage[] idleRight = new GreenfootImage[4];
     GreenfootImage[] idleLeft = new GreenfootImage[4];
+    GreenfootSound chickenSound = new GreenfootSound("chicken-single-alarm-call-6056.mp3");
         
     String facing = "right";
     SimpleTimer animationTimer = new SimpleTimer();
@@ -64,6 +65,7 @@ public class Chicken extends Actor
             MyWorld world = (MyWorld) getWorld();
             world.createEgg();
             world.increaseScore();
+            chickenSound.play();
         }
     }
     
@@ -74,25 +76,26 @@ public class Chicken extends Actor
             return;
         }
         
+        int speed = 3 + (getWorldOfType(MyWorld.class).level / 2);
         int x = getX();
         int y = getY();
         if(Greenfoot.isKeyDown("left"))
         {
-            move(-3);
+            move(-1 * speed);
             facing = "left";
         }
         if(Greenfoot.isKeyDown("right"))
         {
-            move(3);
+            move(speed);
             facing = "right";
         }
         if(Greenfoot.isKeyDown("up"))
         {
-            setLocation(x, y - 3);
+            setLocation(x, y - speed);
         }
         if(Greenfoot.isKeyDown("down"))
         {
-            setLocation(x, y + 3);
+            setLocation(x, y + speed);
         }
         animateChicken();
         collectEgg();

@@ -10,6 +10,7 @@ public class Car extends Actor
 {
     GreenfootImage[] carsRight = new GreenfootImage[5];
     GreenfootImage[] carsLeft = new GreenfootImage[5];
+    GreenfootSound hurtChicken = new GreenfootSound("angry-chicken-imitation-89241.mp3");
     
     public Car()
     {
@@ -40,7 +41,7 @@ public class Car extends Actor
     
     public void move()
     {
-        int speed = 3 + getWorldOfType(MyWorld.class).level;
+        int speed = 2 + getWorldOfType(MyWorld.class).level;
         int y = getY();
         if(y == 125 || y == 375)
         {
@@ -57,6 +58,7 @@ public class Car extends Actor
         //The game ends when the car crashes into the chicken.
         if(isTouching(Chicken.class))
         {
+            hurtChicken.play();
             MyWorld world = (MyWorld) getWorld();
             world.gameOver();
         }
