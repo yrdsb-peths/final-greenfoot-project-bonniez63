@@ -40,7 +40,7 @@ public class MyWorld extends World
         {
             return;
         }
-        if(carTimer.millisElapsed() > 2500 - level * 50)
+        if(carTimer.millisElapsed() > 2500 - score * 100)
         {
             Car car = new Car();
             int y = spawnLocationY[Greenfoot.getRandomNumber(4)];

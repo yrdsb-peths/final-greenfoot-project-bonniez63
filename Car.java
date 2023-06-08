@@ -8,8 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Car extends Actor
 {
-    GreenfootImage[] carsRight = new GreenfootImage[5];
-    GreenfootImage[] carsLeft = new GreenfootImage[5];
+    GreenfootImage[] carsRight = new GreenfootImage[7];
+    GreenfootImage[] carsLeft = new GreenfootImage[7];
     GreenfootSound hurtChicken = new GreenfootSound("angry-chicken-imitation-89241.mp3");
     
     public Car()
