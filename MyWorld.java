@@ -12,9 +12,9 @@ public class MyWorld extends World
     public int highScore = 0;
     public int level = 0;
     Label scoreLabel;
-    Label highScoreLabel;
     Label gameOverLabel;
     Label endScoreLabel;
+    Label restartLabel;
     int[] spawnLocationY = {125, 225, 375, 475};
     public boolean gameRunning = true;
     SimpleTimer carTimer = new SimpleTimer();
@@ -28,8 +28,6 @@ public class MyWorld extends World
         
         scoreLabel = new Label(0, 125);
         addObject(scoreLabel, 825, 60);
-        highScoreLabel = new Label("High Score: " + 0, 50);
-        addObject(highScoreLabel, 150, 50);
         
         createEgg();
     }
@@ -41,8 +39,8 @@ public class MyWorld extends World
         {
             if(Greenfoot.isKeyDown("space"))
             {
-                ScoreBoard scoreBoard = new ScoreBoard();
-                Greenfoot.setWorld(scoreBoard);
+                MyWorld world = new MyWorld();
+                Greenfoot.setWorld(world);
             }
         }
     }
@@ -87,11 +85,11 @@ public class MyWorld extends World
     {
         gameOverLabel = new Label("Game Over", 150);
         endScoreLabel = new Label("Score: " + score, 75);
-        highScoreLabel = new Label("High Score: " + highScore, 75);
+        restartLabel = new Label("Press Space to Restart", 90);
         
         addObject(gameOverLabel, 450, 250);
-        addObject(endScoreLabel, 700, 375);
-        addObject(highScoreLabel, 300, 375);
+        addObject(endScoreLabel, 450, 375);
+        addObject(restartLabel, 450, 475);
         gameRunning = false;
     }
 }

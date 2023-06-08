@@ -1,16 +1,21 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * The scoreboard records the scores of the games as the player plays multiple times
+ * Write a description of class ScoreBoard here.
  * 
- * @author Bonnie Zhuang
- * @version June 2023
+ * @author (your name) 
+ * @version (a version number or a date)
  */
 public class ScoreBoard extends World
 {
 
+    /**
+     * Constructor for objects of class ScoreBoard.
+     * 
+     */
     public ScoreBoard()
     {    
-        super(900, 600, 1); 
+        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        super(600, 400, 1); 
     }
 }
