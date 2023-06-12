@@ -37,10 +37,11 @@ public class MyWorld extends World
         createCar();
         if(!gameRunning)
         {
+            //Game can be restarted
             if(Greenfoot.isKeyDown("space"))
             {
-               ScoreBoard scoreBoard = new ScoreBoard();
-                Greenfoot.setWorld(scoreBoard);
+               MyWorld newWorld = new MyWorld();
+                Greenfoot.setWorld(newWorld);
             }
         }
     }
@@ -51,6 +52,7 @@ public class MyWorld extends World
         {
             return;
         }
+        //Cars would spawn more often as score increases
         if(carTimer.millisElapsed() > 2500 - score * 100)
         {
             Car car = new Car();
@@ -85,7 +87,7 @@ public class MyWorld extends World
     {
         gameOverLabel = new Label("Game Over", 150);
         endScoreLabel = new Label("Score: " + score, 75);
-        continueLabel = new Label("Press Space to Continue", 90);
+        continueLabel = new Label("Press Space for New Game", 80);
         
         addObject(gameOverLabel, 450, 250);
         addObject(endScoreLabel, 450, 375);

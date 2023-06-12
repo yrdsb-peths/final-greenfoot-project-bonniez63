@@ -31,6 +31,7 @@ public class TitleScreen extends World
         }
     }
     
+    //Displays actors of the game without any act methods.
     private void prepare()
     {
         Image chicken = new Image();

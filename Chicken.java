@@ -1,7 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * The Chicken is the main character of our game, and will be crossing the street.
+ * The Chicken is the main character of our game, and will be crossing the
+ * street to collect eggs.
  * 
  * @author Bonnie Zhuang
  * @version June 2023
