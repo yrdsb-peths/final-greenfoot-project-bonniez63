@@ -15,9 +15,12 @@ public class MyWorld extends World
     Label gameOverLabel;
     Label endScoreLabel;
     Label continueLabel;
+    Label levelUpLabel;
+    
     int[] spawnLocationY = {125, 225, 375, 475};
     public boolean gameRunning = true;
     SimpleTimer carTimer = new SimpleTimer();
+    SimpleTimer labelAppearTimer = new SimpleTimer();
     
     public MyWorld()
     {    
@@ -81,6 +84,16 @@ public class MyWorld extends World
         score++;
         scoreLabel.setValue(score);
         level = score/5;
+        if(score % 5 == 0)
+        {
+            levelUpLabel = new Label("Level Up!", 50);
+            addObject(levelUpLabel, 650, 50);
+            labelAppearTimer.mark();
+        }
+        if(labelAppearTimer.millisElapsed() > 1000)
+        {
+            removeObject(levelUpLabel);
+        }
     }
     
     public void gameOver()
